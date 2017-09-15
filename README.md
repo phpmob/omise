@@ -175,6 +175,7 @@ PhpMob follows the standards defined in the [PSR-0](http://www.php-fig.org/psr/p
 ## Tests
 ```bash
 $ ./bin/phpspec run -fpretty
+$ ./bin/phpunit
 ```
 
 ## LICENSE
