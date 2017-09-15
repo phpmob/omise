@@ -171,6 +171,7 @@ PhpMob follows the standards defined in the [PSR-0](http://www.php-fig.org/psr/p
 ## TODOs Testing
   - [ ] Writing spec tests.
   - [ ] Writing unit tests.
+  - [ ] Add support PHP 5.6?
 
 ## Tests
 ```bash
