@@ -10,7 +10,7 @@ build:
                 command: './bin/phpunit'
     environment:
         php:
-            version: '5.6'
+            version: '7.0'
 
 filter:
     paths: ["src"]
