@@ -7,10 +7,7 @@ build:
     tests:
         override:
             -
-                command: './bin/phpspec run -fpretty && ./bin/phpunit --coverage-clover=clover.xml; if [ "$?" -gt "2" ]; then exit 1; fi'
-                coverage:
-                    file: 'clover.xml'
-                    format: 'php-clover'
+                command: './bin/phpspec run -fpretty && ./bin/phpunit'
     environment:
         php:
             version: '7.1'
@@ -20,3 +17,8 @@ filter:
     excluded_paths:
         - "spec/"
         - "tests/"
+
+tools:
+    external_code_coverage:
+        timeout: 1800
+        runs: 2
