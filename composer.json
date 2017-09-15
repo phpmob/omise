@@ -34,7 +34,7 @@
         "php-http/httplug": "^1.0",
         "php-http/discovery": "^1.0",
         "symfony/options-resolver": "^3.3",
-        "doctrine/inflector": "^1.2"
+        "doctrine/inflector": "1.1.*"
     },
     "require-dev": {
         "php-http/guzzle6-adapter": "^1.1",
