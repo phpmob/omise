@@ -31,8 +31,8 @@ class FacadeTestCase extends TestCase
     {
         $this->client = new HttpClient();
         $options = [
-            'secret_key' => 'secret_key',
-            'public_key' => 'public_key',
+            'secret_key' => 'your_secret_key',
+            'public_key' => 'your_public_key',
             'sandbox' => true,
         ];
 

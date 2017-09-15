@@ -79,8 +79,8 @@ abstract class Model
         $this->store[Inflector::tableize($name)] = $value;
     }
 
-    public function convertDateTime($string)
+    /*public function convertDateTime($string)
     {
         // TODO:
-    }
+    }*/
 }
