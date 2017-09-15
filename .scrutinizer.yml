@@ -7,7 +7,7 @@ build:
     tests:
         override:
             -
-                command: './bin/phpunit'
+                command: './bin/phpunit && ./bin/phpspec run -fpretty'
     environment:
         php:
             version: '7.1'
