@@ -130,8 +130,36 @@ $charge->create();
 
 ```
 
+#### Error handling.
+A [phpmob/omise](https://github.com/phpmob/omise) provide two type of Error handling.
+
+  - **InvalidRequestArgumentException** When you need to capture error before sending request.
+  - **InvalidResponseException** When you need to capture error responded from api.
+
+```php
+<?php
+
+use PhpMob\Omise\Exception\InvalidResponseException;
+use PhpMob\Omise\Facade\Charge;
+
+try {
+    // Create charge
+    $charge = Charge::make();
+    $charge->amount = 10000;
+    $charge->currency = 'thb';
+    $charge->cardToken = 'token_id';
+    
+    $charge->create();
+} catch (InvalidResponseException $e) {
+    echo $e->error->message;
+}
+
+```
+
 ## Contributing
 Would like to help us and build the developer-friendly php code? Just follow our [Coding Standards](#coding-standards) and test your code — see [tests](tests),  [spec](spec).
+
+Let Fork and PR now!
 
 ## Coding Standards
 
