@@ -8,6 +8,9 @@ build:
         override:
             -
                 command: './bin/phpunit'
+    environment:
+        php:
+            version: '5.6'
 
 filter:
     paths: ["src"]
