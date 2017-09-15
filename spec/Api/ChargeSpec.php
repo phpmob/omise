@@ -17,12 +17,12 @@ use PhpMob\Omise\Domain\Card;
 use PhpMob\Omise\Exception\InvalidRequestArgumentException;
 use PhpMob\Omise\Exception\InvalidResponseException;
 use PhpMob\Omise\Domain\Charge;
-use PhpMob\Omise\Mock\Fixture;
 use PhpMob\Omise\OmiseApi;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
+use tests\PhpMob\Omise\Fixture;
 
 /**
  * @author Ishmael Doss <nukboon@gmail.com>
@@ -46,7 +46,7 @@ final class ChargeSpec extends ObjectBehavior
         );
     }
 
-    function it_is_initializable(): void
+    function it_is_initializable()
     {
         $this->shouldHaveType(ChargeApi::class);
     }

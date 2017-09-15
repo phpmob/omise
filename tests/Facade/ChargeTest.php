@@ -15,7 +15,7 @@ use PhpMob\Omise\Currency;
 use PhpMob\Omise\Exception\InvalidRequestArgumentException;
 use PhpMob\Omise\Facade\Charge;
 use PhpMob\Omise\Facade\Pagination;
-use PhpMob\Omise\Mock\FacadeTestCase;
+use tests\PhpMob\Omise\FacadeTestCase;
 
 /**
  * @author Ishmael Doss <nukboon@gmail.com>

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace PhpMob\Omise\Mock;
+namespace tests\PhpMob\Omise;
 
 use PhpMob\Omise\OmiseApi;
 use PHPUnit\Framework\TestCase;

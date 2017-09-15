@@ -14,7 +14,7 @@ namespace tests\PhpMob\Omise\Facade;
 use PhpMob\Omise\Exception\InvalidRequestArgumentException;
 use PhpMob\Omise\Facade\Card;
 use PhpMob\Omise\Facade\Token;
-use PhpMob\Omise\Mock\FacadeTestCase;
+use tests\PhpMob\Omise\FacadeTestCase;
 
 /**
  * @author Ishmael Doss <nukboon@gmail.com>

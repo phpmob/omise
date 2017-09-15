@@ -60,6 +60,11 @@ use PhpMob\Omise\Model;
 class Charge extends Model
 {
     /**
+     * @var string
+     */
+    public $cardToken;
+
+    /**
      * @param string $countryCode
      *
      * @return array
@@ -73,8 +78,8 @@ class Charge extends Model
         }
 
         return [
-            'customer' => $this->customer,
-            'card' => $this->card,
+            'customer' => $this->customer ? $this->customer->id : null,
+            'card' => $this->cardToken,
             'amount' => $this->amount,
             'currency' => $this->currency,
             'description' => $this->description,
