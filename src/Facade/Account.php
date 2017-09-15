@@ -9,21 +9,19 @@
  * file that was distributed with this source code.
  */
 
-namespace PhpMob\Omise\Domain;
+namespace PhpMob\Omise\Facade;
 
-use PhpMob\Omise\Model;
+use PhpMob\Omise\Facade;
+use PhpMob\Omise\Domain\Account as Domain;
 
 /**
  * @author Ishmael Doss <nukboon@gmail.com>
  *
+ * @mixin Domain
  *
- * @property string object
- * @property string id
- * @property string location
- * @property string email
- * @property string currency
- * @property string created
+ * @method static Account fetch
+ * @method void refresh()
  */
-class Account extends Model
+class Account extends Facade
 {
 }
