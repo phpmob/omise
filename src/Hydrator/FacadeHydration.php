@@ -27,8 +27,6 @@ class FacadeHydration extends Hydration
             return parent::makeDomainClass($objectName);
         }
 
-        return "PhpMob\\Omise\\Facade\\".ucfirst(
-                $objectName === 'list' ? 'Pagination' : $objectName
-            );
+        return "PhpMob\\Omise\\Facade\\".ucfirst($objectName === 'list' ? 'Pagination' : $objectName);
     }
 }

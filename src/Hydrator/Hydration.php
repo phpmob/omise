@@ -60,8 +60,6 @@ class Hydration implements HydrationInterface
      */
     protected function makeDomainClass($className)
     {
-        return "PhpMob\\Omise\\Domain\\".ucfirst(
-                $className === 'list' ? 'Pagination' : $className
-            );
+        return "PhpMob\\Omise\\Domain\\".ucfirst($className === 'list' ? 'Pagination' : $className);
     }
 }
