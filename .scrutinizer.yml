@@ -7,10 +7,10 @@ build:
     tests:
         override:
             -
-                command: './bin/phpunit --coverage-clover=.omise-coverage && ./bin/phpspec run -fpretty'
+                command: './bin/phpspec run -fpretty && ./bin/phpunit --coverage-clover=clover.xml; if [ "$?" -gt "2" ]; then exit 1; fi'
                 coverage:
-                    file: '.omise-coverage'
-                    format: 'clover'
+                    file: 'clover.xml'
+                    format: 'php-clover'
     environment:
         php:
             version: '7.1'
