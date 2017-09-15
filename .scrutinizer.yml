@@ -8,3 +8,9 @@ build:
         override:
             -
                 command: './bin/phpunit'
+
+filter:
+    paths: ["src"]
+    excluded_paths:
+        - "spec/"
+        - "tests/"
