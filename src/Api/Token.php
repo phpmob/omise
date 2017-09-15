@@ -12,7 +12,7 @@
 namespace PhpMob\Omise\Api;
 
 use PhpMob\Omise\Api;
-use PhpMob\Omise\Domain\Token as Model;
+use PhpMob\Omise\Domain\Token as Domain;
 
 /**
  * @author Ishmael Doss <nukboon@gmail.com>
@@ -29,7 +29,7 @@ final class Token extends Api
     /**
      * @param string $id
      *
-     * @return Model
+     * @return Domain
      */
     public function find($id)
     {
@@ -39,17 +39,17 @@ final class Token extends Api
     }
 
     /**
-     * @param Model $token
+     * @param Domain $token
      */
-    public function refresh(Model $token)
+    public function refresh(Domain $token)
     {
         $token->updateStore($this->find($token->id)->toArray());
     }
 
     /**
-     * @param Model $token
+     * @param Domain $token
      */
-    public function create(Model $token)
+    public function create(Domain $token)
     {
         $token->updateStore($this->doRequest('POST', '/tokens', $token->getCreateData())->toArray());
     }

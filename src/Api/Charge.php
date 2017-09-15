@@ -12,7 +12,7 @@
 namespace PhpMob\Omise\Api;
 
 use PhpMob\Omise\Api;
-use PhpMob\Omise\Domain\Charge as Model;
+use PhpMob\Omise\Domain\Charge as Domain;
 use PhpMob\Omise\Domain\Pagination;
 
 /**
@@ -35,7 +35,7 @@ final class Charge extends Api
     /**
      * @param string $id
      *
-     * @return Model
+     * @return Domain
      */
     public function find($id)
     {
@@ -45,25 +45,25 @@ final class Charge extends Api
     }
 
     /**
-     * @param Model $charge
+     * @param Domain $charge
      */
-    public function refresh(Model $charge)
+    public function refresh(Domain $charge)
     {
         $charge->updateStore($this->find($charge->id)->toArray());
     }
 
     /**
-     * @param Model $charge
+     * @param Domain $charge
      */
-    public function create(Model $charge)
+    public function create(Domain $charge)
     {
         $charge->updateStore($this->doRequest('POST', '/charges', $charge->getCreateData())->toArray());
     }
 
     /**
-     * @param Model $charge
+     * @param Domain $charge
      */
-    public function createUsingToken(Model $charge)
+    public function createUsingToken(Domain $charge)
     {
         self::assertNotEmpty(@$charge->card->id, 'Card token can not be empty.');
 
@@ -71,9 +71,9 @@ final class Charge extends Api
     }
 
     /**
-     * @param Model $charge
+     * @param Domain $charge
      */
-    public function createUsingCustomer(Model $charge)
+    public function createUsingCustomer(Domain $charge)
     {
         self::assertNotEmpty(@$charge->customer->id, 'Customer id can not be empty.');
 
@@ -81,9 +81,9 @@ final class Charge extends Api
     }
 
     /**
-     * @param Model $charge
+     * @param Domain $charge
      */
-    public function createUsingCustomerAndCard(Model $charge)
+    public function createUsingCustomerAndCard(Domain $charge)
     {
         self::assertNotEmpty(@$charge->customer->id && @$charge->card->id, 'Require `customer` and `card`.');
 
@@ -91,9 +91,9 @@ final class Charge extends Api
     }
 
     /**
-     * @param Model $charge
+     * @param Domain $charge
      */
-    public function update(Model $charge)
+    public function update(Domain $charge)
     {
         self::assertNotEmpty($charge->id);
 
@@ -101,9 +101,9 @@ final class Charge extends Api
     }
 
     /**
-     * @param Model $charge
+     * @param Domain $charge
      */
-    public function capture(Model $charge)
+    public function capture(Domain $charge)
     {
         self::assertNotEmpty($charge->id);
 
@@ -111,9 +111,9 @@ final class Charge extends Api
     }
 
     /**
-     * @param Model $charge
+     * @param Domain $charge
      */
-    public function reverse(Model $charge)
+    public function reverse(Domain $charge)
     {
         self::assertNotEmpty($charge->id);
 

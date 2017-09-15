@@ -12,7 +12,7 @@
 namespace PhpMob\Omise\Api;
 
 use PhpMob\Omise\Api;
-use PhpMob\Omise\Domain\Balance as Model;
+use PhpMob\Omise\Domain\Balance as Domain;
 
 /**
  * @author Ishmael Doss <nukboon@gmail.com>
@@ -22,7 +22,7 @@ use PhpMob\Omise\Domain\Balance as Model;
 final class Balance extends Api
 {
     /**
-     * @return Model
+     * @return Domain
      */
     public function fetch()
     {
@@ -30,9 +30,9 @@ final class Balance extends Api
     }
 
     /**
-     * @param Model $account
+     * @param Domain $account
      */
-    public function refresh(Model $account)
+    public function refresh(Domain $account)
     {
         $account->updateStore($this->fetch()->toArray());
     }

@@ -12,7 +12,7 @@
 namespace PhpMob\Omise\Api;
 
 use PhpMob\Omise\Api;
-use PhpMob\Omise\Domain\Card as Model;
+use PhpMob\Omise\Domain\Card as Domain;
 use PhpMob\Omise\Domain\Customer;
 use PhpMob\Omise\Domain\Pagination;
 
@@ -51,7 +51,7 @@ final class Card extends Api
      * @param string $customerId
      * @param string $id
      *
-     * @return Model
+     * @return Domain
      */
     public function find($customerId, $id)
     {
@@ -61,17 +61,17 @@ final class Card extends Api
     }
 
     /**
-     * @param Model $card
+     * @param Domain $card
      */
-    public function refresh(Model $card)
+    public function refresh(Domain $card)
     {
         $card->updateStore($this->find(@$card->customer->id, $card->id)->toArray());
     }
 
     /**
-     * @param Model $card
+     * @param Domain $card
      */
-    public function update(Model $card)
+    public function update(Domain $card)
     {
         self::assertNotEmpty(@$card->customer->id && $card->id, 'CustomerId or Id cannot be empty.');
 
@@ -81,9 +81,9 @@ final class Card extends Api
     }
 
     /**
-     * @param Model $card
+     * @param Domain $card
      */
-    public function destroy(Model $card)
+    public function destroy(Domain $card)
     {
         self::assertNotEmpty(@$card->customer->id && $card->id, 'CustomerId or Id cannot be empty.');
 

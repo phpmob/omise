@@ -12,7 +12,7 @@
 namespace PhpMob\Omise\Api;
 
 use PhpMob\Omise\Api;
-use PhpMob\Omise\Domain\Customer as Model;
+use PhpMob\Omise\Domain\Customer as Domain;
 use PhpMob\Omise\Domain\Pagination;
 
 /**
@@ -35,7 +35,7 @@ final class Customer extends Api
     /**
      * @param string $id
      *
-     * @return Model
+     * @return Domain
      */
     public function find($id)
     {
@@ -45,17 +45,17 @@ final class Customer extends Api
     }
 
     /**
-     * @param Model $customer
+     * @param Domain $customer
      */
-    public function refresh(Model $customer)
+    public function refresh(Domain $customer)
     {
         $customer->updateStore($this->find($customer->id)->toArray());
     }
 
     /**
-     * @param Model $customer
+     * @param Domain $customer
      */
-    public function create(Model $customer)
+    public function create(Domain $customer)
     {
         $data = $customer->getCreateData();
 
@@ -67,9 +67,9 @@ final class Customer extends Api
     }
 
     /**
-     * @param Model $customer
+     * @param Domain $customer
      */
-    public function createWithCard(Model $customer)
+    public function createWithCard(Domain $customer)
     {
         $data = $customer->getCreateData();
 
@@ -79,9 +79,9 @@ final class Customer extends Api
     }
 
     /**
-     * @param Model $customer
+     * @param Domain $customer
      */
-    public function update(Model $customer)
+    public function update(Domain $customer)
     {
         self::assertNotEmpty($customer->id);
 
@@ -95,9 +95,9 @@ final class Customer extends Api
     }
 
     /**
-     * @param Model $customer
+     * @param Domain $customer
      */
-    public function updateWithCard(Model $customer)
+    public function updateWithCard(Domain $customer)
     {
         $data = $customer->getCreateData();
 
@@ -107,9 +107,9 @@ final class Customer extends Api
     }
 
     /**
-     * @param Model $customer
+     * @param Domain $customer
      */
-    public function destroy(Model $customer)
+    public function destroy(Domain $customer)
     {
         self::assertNotEmpty($customer->id);
 
