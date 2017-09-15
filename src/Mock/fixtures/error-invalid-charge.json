@@ -1,0 +1,6 @@
+{
+    "object": "error",
+    "location": "https://www.omise.co/api-errors#invalid-charge",
+    "code": "invalid_charge",
+    "message": "currency is currently not supported and amount is not a number"
+}
