@@ -31,7 +31,7 @@ final class Currency
      *
      * @return array
      */
-    final public static function getSupporteds($countryCode)
+    public static function getSupporteds($countryCode)
     {
         return [
             Country::JP => [
@@ -55,7 +55,7 @@ final class Currency
      *
      * @return array
      */
-    final public static function getMinMaxs($code)
+    public static function getMinMaxs($code)
     {
         return [
             self::JPY => [100, 2000000],
@@ -69,7 +69,7 @@ final class Currency
      *
      * @return int
      */
-    final public static function getDivisionOffset($code)
+    public static function getDivisionOffset($code)
     {
         return [
             self::JPY => 1,
@@ -83,7 +83,7 @@ final class Currency
      *
      * @return int
      */
-    final public static function getSymblo($code)
+    public static function getSymblo($code)
     {
         return [
             self::JPY => '¥',
@@ -98,7 +98,7 @@ final class Currency
      *
      * @return int
      */
-    final public static function convert($amount, $code)
+    public static function convert($amount, $code)
     {
         return $amount * self::getDivisionOffset($code);
     }
@@ -109,7 +109,7 @@ final class Currency
      *
      * @return int
      */
-    final public static function format($amount, $code)
+    public static function format($amount, $code)
     {
         if ($amount) {
             return $amount / self::getDivisionOffset($code);
