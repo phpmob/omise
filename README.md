@@ -17,7 +17,7 @@ To use [guzzlehttp/guzzle](https://github.com/guzzle/guzzle) you need to install
 $ composer require php-http/guzzle6-adapter
 ```
 
-Now you can use buil-in `\PhpMob\Omise\Client\GuzzleHttpClient`.
+Now you can use built-in `\PhpMob\Omise\Client\GuzzleHttpClient`.
 
 ## Usage
 A [phpmob/omise](https://github.com/phpmob/omise) desinged for `Solid` use and also add bonus for Static big fan use by implementing `Facade`.
