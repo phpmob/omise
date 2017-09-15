@@ -2,7 +2,7 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/phpmob/omise/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/phpmob/omise/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/phpmob/omise/badges/build.png?b=master)](https://scrutinizer-ci.com/g/phpmob/omise/build-status/master)
 [![Code Coverage](https://scrutinizer-ci.com/g/phpmob/omise/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/phpmob/omise/?branch=master)
-
+[![Build Status](https://travis-ci.org/phpmob/omise.svg?branch=master)](https://travis-ci.org/phpmob/omise)
 Just alternative Omise api client - in php.
 
 ## Installation
