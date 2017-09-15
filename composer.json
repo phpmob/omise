@@ -50,6 +50,6 @@
         }
     },
     "suggest": {
-        "php-http/guzzle6-adapter": "To use build-in \\PhpMob\\Omise\\Client\\GuzzleHttpClient."
+        "php-http/guzzle6-adapter": "To use built-in \\PhpMob\\Omise\\Client\\GuzzleHttpClient."
     }
 }
