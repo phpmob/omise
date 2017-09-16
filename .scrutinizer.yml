@@ -13,7 +13,7 @@ build:
             version: '7.1'
 
 filter:
-    paths: ["src"]
+    paths: ["src/"]
     excluded_paths:
         - "spec/"
         - "tests/"
