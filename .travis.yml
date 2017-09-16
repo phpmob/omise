@@ -30,7 +30,7 @@ matrix:
     - php: '7.1'
       env:
         - COVERAGE="true"
-        - PHPUNIT_FLAGS="--stop-on-failure --verbose --coverage-text --coverage-clover=coverage.xml"
+        - PHPUNIT_FLAGS="--stop-on-failure --verbose --coverage-text --coverage-clover=coverage.clover"
   allow_failures:
     - php: nightly
     - php: '7.2'
