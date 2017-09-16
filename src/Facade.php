@@ -37,13 +37,13 @@ abstract class Facade
     }
 
     /**
-     * @param array $domain
+     * @param array $data
      *
      * @return static
      */
-    public static function make(array $domain = [])
+    public static function make(array $data = [])
     {
-        return new static($domain);
+        return new static($data);
     }
 
     /**

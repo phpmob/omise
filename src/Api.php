@@ -131,7 +131,7 @@ abstract class Api
             $content = json_encode(
                 [
                     'object' => 'error',
-                    'code' => 'HTTP-'.$response->getStatusCode(),
+                    'code' => 'http_error_'.$response->getStatusCode(),
                     'message' => $response->getReasonPhrase(),
                 ]
             );

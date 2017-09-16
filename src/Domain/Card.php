@@ -35,23 +35,27 @@ use PhpMob\Omise\Model;
  * @property string name
  * @property string created
  * @property boolean deleted
+ *
+ * @property Customer $customer
+ * @property string $number
+ * @property integer $securityCode
  */
 class Card extends Model
 {
     /**
      * @var Customer
      */
-    public $customer;
+    protected $customer;
 
     /**
      * @var string
      */
-    public $number;
+    protected $number;
 
     /**
      * @var integer
      */
-    public $securityCode;
+    protected $securityCode;
 
     /**
      * @return array

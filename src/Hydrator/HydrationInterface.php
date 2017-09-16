@@ -11,7 +11,7 @@
 
 namespace PhpMob\Omise\Hydrator;
 
-use PhpMob\Omise\Model;
+use PhpMob\Omise\Exception\InvalidResponseException;
 
 /**
  * @author Ishmael Doss <nukboon@gmail.com>
@@ -21,7 +21,20 @@ interface HydrationInterface
     /**
      * @param string $rawData
      *
-     * @return Model|mixed
+     * @return mixed
+     * @throws InvalidResponseException
      */
     public function hydrate($rawData);
+
+    /**
+     * @param $objectName
+     *
+     * @return string
+     */
+    public static function getDomainClass($objectName);
+
+    /**
+     * @return string
+     */
+    public static function getDomainAssertionClass();
 }

@@ -46,23 +46,14 @@ use PhpMob\Omise\Model;
  * @property string returnUri
  * @property string authorizeUri
  *
- * @method static Pagination all(array $parameters = [])
- * @method static Charge find($id)
- * @method void refresh()
- * @method void update()
- * @method void capture()
- * @method void reverse()
- * @method void create()
- * @method void createUsingToken()
- * @method void createUsingCustomer()
- * @method void createUsingCustomerAndCard()
+ * @property string $cardToken
  */
 class Charge extends Model
 {
     /**
      * @var string
      */
-    public $cardToken;
+    protected $cardToken;
 
     /**
      * @param string $countryCode
@@ -78,8 +69,8 @@ class Charge extends Model
         }
 
         return [
-            'customer' => $this->customer ? $this->customer->id : null,
-            'card' => $this->cardToken,
+            'customer' => strval($this->customer),
+            'card' => $this->__get('cardToken'),
             'amount' => $this->amount,
             'currency' => $this->currency,
             'description' => $this->description,

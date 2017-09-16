@@ -28,17 +28,15 @@ use PhpMob\Omise\Model;
  * @property string created
  * @property Pagination cards
  *
- * @method static Pagination all(array $parameters = [])
- * @method static Customer find($id)
- * @method void refresh()
- * @method void create()
- * @method void createWithCard()
- * @method void update()
- * @method void updateWithCard()
- * @method void destroy()
+ * @property string cardToken
  */
 class Customer extends Model
 {
+    /**
+     * @var string
+     */
+    protected $cardToken;
+
     /**
      * @return array
      */
@@ -48,7 +46,7 @@ class Customer extends Model
             'email' => $this->email,
             'description' => $this->description,
             'metadata' => $this->metadata,
-            'card' => $this->defaultCard,
+            'card' => $this->__get('cardToken'),
         ];
     }
 

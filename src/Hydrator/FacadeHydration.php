@@ -11,22 +11,30 @@
 
 namespace PhpMob\Omise\Hydrator;
 
+use PhpMob\Omise\Facade;
+
 /**
  * @author Ishmael Doss <nukboon@gmail.com>
  */
 class FacadeHydration extends Hydration
 {
     /**
-     * @param $objectName
-     *
-     * @return string
+     * {@inheritdoc}
      */
-    protected function makeDomainClass($objectName)
+    public static function getDomainClass($objectName)
     {
         if ('error' === $objectName) {
-            return parent::makeDomainClass($objectName);
+            return parent::getDomainClass($objectName);
         }
 
         return "PhpMob\\Omise\\Facade\\".ucfirst($objectName === 'list' ? 'Pagination' : $objectName);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public static function getDomainAssertionClass()
+    {
+        return Facade::class;
     }
 }

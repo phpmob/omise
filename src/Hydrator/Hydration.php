@@ -11,6 +11,8 @@
 
 namespace PhpMob\Omise\Hydrator;
 
+use PhpMob\Omise\Domain\Error;
+use PhpMob\Omise\Exception\InvalidResponseException;
 use PhpMob\Omise\Model;
 
 /**
@@ -22,7 +24,7 @@ class Hydration implements HydrationInterface
      * TODO: improve me
      * @param array $data
      *
-     * @return array
+     * @return Model|array
      */
     private function doHydrate(array &$data)
     {
@@ -36,7 +38,7 @@ class Hydration implements HydrationInterface
             return $data;
         }
 
-        $domain = $this->makeDomainClass($data['object']);
+        $domain = static::getDomainClass($data['object']);
 
         return new $domain($data);
     }
@@ -44,13 +46,24 @@ class Hydration implements HydrationInterface
     /**
      * @param string $rawData
      *
-     * @return Model|mixed
+     * @return Model
+     * @throws InvalidResponseException
      */
     public function hydrate($rawData)
     {
         $data = json_decode($rawData, true);
+        $domain = $this->doHydrate($data);
+        $assertingClass = static::getDomainAssertionClass();
 
-        return $this->doHydrate($data);
+        if (!$domain instanceof $assertingClass) {
+            throw new InvalidResponseException(new Error([
+                'code' => 'unsupported_format',
+                'message' => 'Unsupported format.',
+                'data' => $domain,
+            ]));
+        }
+
+        return $domain;
     }
 
     /**
@@ -58,8 +71,16 @@ class Hydration implements HydrationInterface
      *
      * @return string
      */
-    protected function makeDomainClass($className)
+    public static function getDomainClass($className)
     {
         return "PhpMob\\Omise\\Domain\\".ucfirst($className === 'list' ? 'Pagination' : $className);
+    }
+
+    /**
+     * @return string
+     */
+    public static function getDomainAssertionClass()
+    {
+        return Model::class;
     }
 }

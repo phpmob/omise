@@ -19,6 +19,11 @@ use Doctrine\Common\Inflector\Inflector;
 abstract class Model
 {
     /**
+     * @var string
+     */
+    protected $idAttribute = 'id';
+
+    /**
      * @var array
      */
     protected $store = [];
@@ -58,14 +63,24 @@ abstract class Model
     }
 
     /**
+     * @return string
+     */
+    public function __toString()
+    {
+        $idAttribute = $this->idAttribute;
+
+        return (string) $this->$idAttribute;
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function __get($name)
     {
-        $name = Inflector::tableize($name);
+        $name = Inflector::tableize($property = $name);
 
         if (!array_key_exists($name, $this->store)) {
-            return null;
+            return property_exists(get_called_class(), $property) ? $this->$property : null;
         }
 
         return $this->store[$name];

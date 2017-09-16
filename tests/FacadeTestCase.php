@@ -20,6 +20,7 @@ use PHPUnit\Framework\TestCase;
 class FacadeTestCase extends TestCase
 {
     protected $chargeId = 'chrg_test_5086xlsx4lghk9bpb75';
+    protected $customerId = 'cust_test_5086xleuh9ft4bn0ac2';
     protected $tokenId = 'tokn_test_5086xl7c9k5rnx35qba';
 
     /**

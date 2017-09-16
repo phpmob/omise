@@ -73,7 +73,7 @@ final class Customer extends Api
     {
         $data = $customer->getCreateData();
 
-        self::assertNotEmpty(@$data['card'], 'Card Id can not be empty.');
+        self::assertNotEmpty(@$data['card'], 'Card Token can not be empty.');
 
         $this->create($customer);
     }
@@ -101,7 +101,7 @@ final class Customer extends Api
     {
         $data = $customer->getCreateData();
 
-        self::assertNotEmpty(@$data['card'], 'Card Id can not be empty.');
+        self::assertNotEmpty(@$data['card'], 'Card Token can not be empty.');
 
         $this->update($customer);
     }

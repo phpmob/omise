@@ -23,4 +23,8 @@ use PhpMob\Omise\Model;
  */
 class Error extends Model
 {
+    /**
+     * @var string
+     */
+    protected $idAttribute = 'code';
 }
