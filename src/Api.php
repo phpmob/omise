@@ -147,7 +147,7 @@ abstract class Api
     }
 
     /**
-     * @param string $id
+     * @param mixed $id
      * @param string $message
      *
      * @throws InvalidRequestArgumentException
