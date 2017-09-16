@@ -1,5 +1,4 @@
 # PhpMob Omise - WIP NOT RELEASE YET!
-[![License](https://poser.pugx.org/phpmob/omise/license)](https://packagist.org/packages/phpmob/omise)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/phpmob/omise/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/phpmob/omise/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/phpmob/omise/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/phpmob/omise/?branch=master)
 [![Build Status](https://travis-ci.org/phpmob/omise.svg?branch=master)](https://travis-ci.org/phpmob/omise)
