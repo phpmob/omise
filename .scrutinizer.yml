@@ -20,8 +20,8 @@ filter:
     excluded_paths:
         - "spec/"
         - "tests/"
-
-tools:
-    external_code_coverage:
-        #timeout: 300
-        runs: 2
+#
+#tools:
+#    external_code_coverage:
+#        #timeout: 300
+#        runs: 2
