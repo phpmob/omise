@@ -11,7 +11,7 @@ branches:
 env:
   global:
     - OCULAR_BIN=$HOME/.bin/ocular.phar
-    - PHPSPECT_BIN='bin/phpspect'
+    - PHPSPECT_BIN='bin/phpspec'
     - PHPSPECT_FLAGS='-fpretty'
     - PHPUNIT_BIN='bin/phpunit'
     - PHPUNIT_CONFIG='phpunit.xml.dist'
