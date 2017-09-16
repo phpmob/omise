@@ -3,6 +3,10 @@
 [![Build Status](https://scrutinizer-ci.com/g/phpmob/omise/badges/build.png?b=master)](https://scrutinizer-ci.com/g/phpmob/omise/build-status/master)
 [![Code Coverage](https://scrutinizer-ci.com/g/phpmob/omise/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/phpmob/omise/?branch=master)
 [![Build Status](https://travis-ci.org/phpmob/omise.svg?branch=master)](https://travis-ci.org/phpmob/omise)
+[![License](https://poser.pugx.org/phpmob/omise/license)](https://packagist.org/packages/phpmob/omise)
+[![Latest Stable Version](https://poser.pugx.org/phpmob/omise/version)](https://packagist.org/packages/phpmob/omise)
+[![Latest Unstable Version](https://poser.pugx.org/phpmob/omise/v/unstable)](//packagist.org/packages/phpmob/omise)
+[![Total Downloads](https://poser.pugx.org/phpmob/omise/downloads)](https://packagist.org/packages/phpmob/omise)
 
 Just alternative Omise api client - in php.
 
