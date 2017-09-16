@@ -118,15 +118,7 @@ class CustomerTest extends FacadeTestCase
         $this->expectException(InvalidRequestArgumentException::class);
         $this->expectExceptionMessage('Card Token can not be empty.');
 
-        $data = [
-            'object' => 'customer',
-            'email' => 'email@test.com',
-            'description' => 'description',
-        ];
-
-        $this->client->content(json_encode($data));
-
-        $customer = Customer::make($data);
+        $customer = Customer::make([]);
         $customer->cardToken = '';
 
         $customer->createWithCard();
@@ -185,16 +177,7 @@ class CustomerTest extends FacadeTestCase
         $this->expectException(InvalidRequestArgumentException::class);
         $this->expectExceptionMessage('Card Token can not be empty.');
 
-        $data = [
-            'object' => 'customer',
-            'id' => 'test',
-            'email' => 'email@test.com',
-            'description' => 'description',
-        ];
-
-        $this->client->content(json_encode($data));
-
-        $customer = Customer::make($data);
+        $customer = Customer::make([]);
         $customer->cardToken = '';
 
         $customer->updateWithCard();
@@ -208,16 +191,35 @@ class CustomerTest extends FacadeTestCase
         $this->expectException(InvalidRequestArgumentException::class);
         $this->expectExceptionMessage('Id can not be empty.');
 
-        $data = [
-            'object' => 'customer',
-            'email' => 'email@test.com',
-            'description' => 'description',
-        ];
-
-        $this->client->content(json_encode($data));
-
-        $customer = Customer::make($data);
+        $customer = Customer::make([]);
 
         $customer->update();
+    }
+
+    /**
+     * @test
+     */
+    function it_can_not_destroy_item_without_id()
+    {
+        $this->expectException(InvalidRequestArgumentException::class);
+        $this->expectExceptionMessage('Id can not be empty.');
+
+        $customer = Customer::make();
+
+        $customer->destroy();
+    }
+
+    /**
+     * @test
+     */
+    function it_can_destroy_item()
+    {
+        $this->client->fixture('customer-deleted');
+
+        $customer = Customer::make(['id' => 'foo']);
+
+        $customer->destroy();
+
+        $this->assertTrue($customer->deleted);
     }
 }

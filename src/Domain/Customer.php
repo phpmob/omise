@@ -27,6 +27,7 @@ use PhpMob\Omise\Model;
  * @property string metadata
  * @property string created
  * @property Pagination cards
+ * @property boolean deleted
  *
  * @property string cardToken
  */
