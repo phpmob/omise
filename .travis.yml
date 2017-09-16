@@ -62,7 +62,7 @@ script:
 after_script:
   - |
     if [ -n "$COVERAGE" ]; then
-      php $OCULAR_BIN code-coverage:upload --format=php-clover coverage.xml
+      php $OCULAR_BIN code-coverage:upload --format=php-clover coverage.clover
     fi
 
 notifications:
