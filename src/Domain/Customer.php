@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace PhpMob\Omise\Domain;
 
 use PhpMob\Omise\Model;
@@ -16,10 +18,9 @@ use PhpMob\Omise\Model;
 /**
  * @author Ishmael Doss <nukboon@gmail.com>
  *
- *
  * @property string object
  * @property string id
- * @property boolean livemode
+ * @property bool livemode
  * @property string location
  * @property string defaultCard
  * @property string email
@@ -27,8 +28,7 @@ use PhpMob\Omise\Model;
  * @property string metadata
  * @property string created
  * @property Pagination cards
- * @property boolean deleted
- *
+ * @property bool deleted
  * @property string cardToken
  */
 class Customer extends Model

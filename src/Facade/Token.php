@@ -9,15 +9,18 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace PhpMob\Omise\Facade;
 
-use PhpMob\Omise\Facade;
 use PhpMob\Omise\Domain\Token as Domain;
+use PhpMob\Omise\Facade;
 
 /**
  * @author Ishmael Doss <nukboon@gmail.com>
  *
  * @mixin Domain
+ *
  * @method static Token find($id)
  * @method void refresh()
  * @method void create()

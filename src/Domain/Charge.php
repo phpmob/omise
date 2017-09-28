@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace PhpMob\Omise\Domain;
 
 use PhpMob\Omise\Country;
@@ -19,23 +21,22 @@ use PhpMob\Omise\Model;
 /**
  * @author Ishmael Doss <nukboon@gmail.com>
  *
- *
  * @property string id
  * @property string object
- * @property boolean livemode
+ * @property bool livemode
  * @property string location
  * @property string status
- * @property integer amount
+ * @property int amount
  * @property string currency
  * @property string description
  * @property string metadata
- * @property boolean capture
- * @property boolean authorized
- * @property boolean reversed
- * @property boolean paid
+ * @property bool capture
+ * @property bool authorized
+ * @property bool reversed
+ * @property bool paid
  * @property string transaction
  * @property Card card
- * @property integer refunded
+ * @property int refunded
  * @property Pagination refunds
  * @property string failureCode
  * @property string failureMessage
@@ -45,7 +46,6 @@ use PhpMob\Omise\Model;
  * @property string created
  * @property string returnUri
  * @property string authorizeUri
- *
  * @property string $cardToken
  */
 class Charge extends Model
@@ -64,12 +64,12 @@ class Charge extends Model
     {
         if (!in_array($this->currency, Currency::getSupporteds($countryCode))) {
             throw new InvalidRequestArgumentException(
-                sprintf("The currency `%s` is not supported in your country `%s`.", $this->currency, $countryCode)
+                sprintf('The currency `%s` is not supported in your country `%s`.', $this->currency, $countryCode)
             );
         }
 
         return [
-            'customer' => strval($this->customer),
+            'customer' => (string) ($this->customer),
             'card' => $this->__get('cardToken'),
             'amount' => $this->amount,
             'currency' => $this->currency,

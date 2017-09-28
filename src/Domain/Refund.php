@@ -9,13 +9,14 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace PhpMob\Omise\Domain;
 
 use PhpMob\Omise\Model;
 
 /**
  * @author Ishmael Doss <nukboon@gmail.com>
- *
  *
  * @property string message
  * @property string code

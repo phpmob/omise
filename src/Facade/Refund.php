@@ -9,10 +9,12 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace PhpMob\Omise\Facade;
 
-use PhpMob\Omise\Facade;
 use PhpMob\Omise\Domain\Refund as Domain;
+use PhpMob\Omise\Facade;
 
 /**
  * @author Ishmael Doss <nukboon@gmail.com>

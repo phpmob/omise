@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace PhpMob\Omise\Hydrator;
 
 use PhpMob\Omise\Facade;
@@ -27,7 +29,7 @@ class FacadeHydration extends Hydration
             return parent::getDomainClass($objectName);
         }
 
-        return "PhpMob\\Omise\\Facade\\".ucfirst($objectName === 'list' ? 'Pagination' : $objectName);
+        return 'PhpMob\\Omise\\Facade\\' . ucfirst($objectName === 'list' ? 'Pagination' : $objectName);
     }
 
     /**

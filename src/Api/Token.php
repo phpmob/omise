@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace PhpMob\Omise\Api;
 
 use PhpMob\Omise\Api;
@@ -35,7 +37,7 @@ final class Token extends Api
     {
         self::assertNotEmpty($id);
 
-        return $this->doRequest('GET', '/tokens/'.$id);
+        return $this->doRequest('GET', '/tokens/' . $id);
     }
 
     /**

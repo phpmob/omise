@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace PhpMob\Omise\Api;
 
 use PhpMob\Omise\Api;
@@ -65,7 +67,7 @@ final class Card extends Api
      */
     public function refresh(Domain $card)
     {
-        $card->updateStore($this->find(strval($card->customer), $card->id)->toArray());
+        $card->updateStore($this->find((string) ($card->customer), $card->id)->toArray());
     }
 
     /**
@@ -73,10 +75,10 @@ final class Card extends Api
      */
     public function update(Domain $card)
     {
-        self::assertNotEmpty(strval($card->customer) && $card->id, 'CustomerId or Id cannot be empty.');
+        self::assertNotEmpty((string) ($card->customer) && $card->id, 'CustomerId or Id cannot be empty.');
 
         $card->updateStore(
-            $this->doRequest('PATCH', self::path(strval($card->customer), $card->id), $card->getUpdateData())->getData()
+            $this->doRequest('PATCH', self::path((string) ($card->customer), $card->id), $card->getUpdateData())->getData()
         );
     }
 
@@ -85,10 +87,10 @@ final class Card extends Api
      */
     public function destroy(Domain $card)
     {
-        self::assertNotEmpty(strval($card->customer) && $card->id, 'CustomerId or Id cannot be empty.');
+        self::assertNotEmpty((string) ($card->customer) && $card->id, 'CustomerId or Id cannot be empty.');
 
         $card->updateStore(
-            $this->doRequest('DELETE', self::path(strval($card->customer), $card->id), $card->getUpdateData())->toArray()
+            $this->doRequest('DELETE', self::path((string) ($card->customer), $card->id), $card->getUpdateData())->toArray()
         );
     }
 }

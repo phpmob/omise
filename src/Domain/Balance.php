@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace PhpMob\Omise\Domain;
 
 use PhpMob\Omise\Model;
@@ -16,12 +18,11 @@ use PhpMob\Omise\Model;
 /**
  * @author Ishmael Doss <nukboon@gmail.com>
  *
- *
  * @property string object
- * @property boolean livemode
+ * @property bool livemode
  * @property string location
- * @property integer available
- * @property integer total
+ * @property int available
+ * @property int total
  * @property string currency
  *
  * @method static Balance fetch

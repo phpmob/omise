@@ -9,15 +9,18 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace PhpMob\Omise\Facade;
 
-use PhpMob\Omise\Facade;
 use PhpMob\Omise\Domain\Pagination as Domain;
+use PhpMob\Omise\Facade;
 
 /**
  * @author Ishmael Doss <nukboon@gmail.com>
  *
  * @mixin Domain
+ *
  * @property Domain $domain
  */
 class Pagination extends Facade implements \Countable

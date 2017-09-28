@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace PhpMob\Omise;
 
 /**
@@ -69,7 +71,7 @@ abstract class Facade
     {
         if (!method_exists(self::getApiForClass(), $method)) {
             throw new \InvalidArgumentException(
-                sprintf("Not found method named `%s` for `%s` api.", $method, get_called_class())
+                sprintf('Not found method named `%s` for `%s` api.', $method, get_called_class())
             );
         }
     }
@@ -104,9 +106,6 @@ abstract class Facade
         return self::getApiForClass()->$method($this->domain, ...$args);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function __get($name)
     {
         $result = $this->domain->$name;
@@ -123,9 +122,6 @@ abstract class Facade
         return $result;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function __set($name, $value)
     {
         $this->domain->$name = $value;

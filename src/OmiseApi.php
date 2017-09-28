@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace PhpMob\Omise;
 
 use PhpMob\Omise\Api\Account as AccountApi;
@@ -78,7 +80,7 @@ class OmiseApi
     public function create($apiClass)
     {
         if (!in_array(Api::class, class_parents($apiClass))) {
-            throw new \LogicException("The api class ($apiClass) should have sub-type of ".Api::class);
+            throw new \LogicException("The api class ($apiClass) should have sub-type of " . Api::class);
         }
 
         return new $apiClass($this->httpClient, $this->options, $this->hydration);
@@ -95,12 +97,12 @@ class OmiseApi
         $self = new self($httpClient, $options, new FacadeHydration());
 
         /**
-         * @var Facade $domainClass
+         * @var Facade
          * @var Api $apiClass
          */
         foreach (self::$supports as $domainClass => $apiClass) {
             if (!in_array(Facade::class, class_parents($domainClass))) {
-                throw new \LogicException("The domain class ($domainClass) should have sub-type of ".Facade::class);
+                throw new \LogicException("The domain class ($domainClass) should have sub-type of " . Facade::class);
             }
 
             $domainClass::setApi($self->create($apiClass));

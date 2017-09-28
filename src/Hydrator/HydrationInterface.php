@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace PhpMob\Omise\Hydrator;
 
 use PhpMob\Omise\Exception\InvalidResponseException;
@@ -22,6 +24,7 @@ interface HydrationInterface
      * @param string $rawData
      *
      * @return mixed
+     *
      * @throws InvalidResponseException
      */
     public function hydrate($rawData);

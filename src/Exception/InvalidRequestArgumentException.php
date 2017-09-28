@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace PhpMob\Omise\Exception;
 
 /**
@@ -16,5 +18,4 @@ namespace PhpMob\Omise\Exception;
  */
 final class InvalidRequestArgumentException extends \InvalidArgumentException
 {
-
 }

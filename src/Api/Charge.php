@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace PhpMob\Omise\Api;
 
 use PhpMob\Omise\Api;
@@ -41,7 +43,7 @@ final class Charge extends Api
     {
         self::assertNotEmpty($id);
 
-        return $this->doRequest('GET', '/charges/'.$id);
+        return $this->doRequest('GET', '/charges/' . $id);
     }
 
     /**
@@ -97,7 +99,7 @@ final class Charge extends Api
     {
         self::assertNotEmpty($charge->id);
 
-        $charge->updateStore($this->doRequest('PATCH', '/charges/'.$charge->id, $charge->getUpdateData())->toArray());
+        $charge->updateStore($this->doRequest('PATCH', '/charges/' . $charge->id, $charge->getUpdateData())->toArray());
     }
 
     /**
@@ -107,7 +109,7 @@ final class Charge extends Api
     {
         self::assertNotEmpty($charge->id);
 
-        $charge->updateStore($this->doRequest('POST', '/charges/'.$charge->id.'/capture')->toArray());
+        $charge->updateStore($this->doRequest('POST', '/charges/' . $charge->id . '/capture')->toArray());
     }
 
     /**
@@ -117,6 +119,6 @@ final class Charge extends Api
     {
         self::assertNotEmpty($charge->id);
 
-        $charge->updateStore($this->doRequest('POST', '/charges/'.$charge->id.'/reverse')->toArray());
+        $charge->updateStore($this->doRequest('POST', '/charges/' . $charge->id . '/reverse')->toArray());
     }
 }

@@ -9,18 +9,20 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace PhpMob\Omise\Domain;
 
 use PhpMob\Omise\Model;
 
 /**
  * @author Ishmael Doss <nukboon@gmail.com>
- * @see https://www.omise.co/cards-api
  *
+ * @see https://www.omise.co/cards-api
  *
  * @property string object
  * @property string id
- * @property boolean livemode
+ * @property bool livemode
  * @property string location
  * @property string country
  * @property string city
@@ -29,16 +31,15 @@ use PhpMob\Omise\Model;
  * @property string financing
  * @property string lastDigits
  * @property string brand
- * @property integer expirationMonth
- * @property integer expirationYear
+ * @property int expirationMonth
+ * @property int expirationYear
  * @property string fingerprint
  * @property string name
  * @property string created
- * @property boolean deleted
- *
+ * @property bool deleted
  * @property Customer $customer
  * @property string $number
- * @property integer $securityCode
+ * @property int $securityCode
  */
 class Card extends Model
 {
@@ -53,7 +54,7 @@ class Card extends Model
     protected $number;
 
     /**
-     * @var integer
+     * @var int
      */
     protected $securityCode;
 

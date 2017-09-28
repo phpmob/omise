@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace PhpMob\Omise\Domain;
 
 use PhpMob\Omise\Model;
@@ -16,10 +18,9 @@ use PhpMob\Omise\Model;
 /**
  * @author Ishmael Doss <nukboon@gmail.com>
  *
- *
  * @property string id
- * @property boolean livemode
- * @property boolean used
+ * @property bool livemode
+ * @property bool used
  * @property Card card
  * @property string datetime
  */

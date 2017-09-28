@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace PhpMob\Omise\Exception;
 
 use PhpMob\Omise\Domain\Error;
@@ -23,7 +25,7 @@ final class InvalidResponseException extends \Exception
      */
     public $error;
 
-    final public function __construct(Error $error, $code = 0, \Throwable $previous = null)
+    public function __construct(Error $error, $code = 0, \Throwable $previous = null)
     {
         $this->error = $error;
 

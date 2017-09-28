@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace PhpMob\Omise\Client;
 
 use GuzzleHttp\Psr7\Request;
@@ -37,7 +39,7 @@ final class GuzzleHttpClient implements HttpClientInterface
                 [
                     'verify' => true,
                     'headers' => [
-                        'User-Agent' => 'PHPMOB-OMISE/'.OmiseApi::VERSION,
+                        'User-Agent' => 'PHPMOB-OMISE/' . OmiseApi::VERSION,
                     ],
                 ],
                 $config
@@ -56,7 +58,7 @@ final class GuzzleHttpClient implements HttpClientInterface
     public function send($method, $uri, array $data = [], array $headers = [])
     {
         if ('GET' === strtoupper($method) && !empty($data)) {
-            $uri = $uri.'?'.http_build_query($data);
+            $uri = $uri . '?' . http_build_query($data);
             $data = [];
         }
 

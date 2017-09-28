@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace PhpMob\Omise\Hydrator;
 
 use PhpMob\Omise\Domain\Error;
@@ -22,6 +24,7 @@ class Hydration implements HydrationInterface
 {
     /**
      * TODO: improve me
+     *
      * @param array $data
      *
      * @return Model|array
@@ -47,6 +50,7 @@ class Hydration implements HydrationInterface
      * @param string $rawData
      *
      * @return Model
+     *
      * @throws InvalidResponseException
      */
     public function hydrate($rawData)
@@ -73,7 +77,7 @@ class Hydration implements HydrationInterface
      */
     public static function getDomainClass($className)
     {
-        return "PhpMob\\Omise\\Domain\\".ucfirst($className === 'list' ? 'Pagination' : $className);
+        return 'PhpMob\\Omise\\Domain\\' . ucfirst($className === 'list' ? 'Pagination' : $className);
     }
 
     /**

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b4b57fffa3f6479ef270eb342eb3ed9d",
+    "content-hash": "f093f282edb94011e797925eeec8b59c",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -3040,6 +3040,39 @@
                 "standards"
             ],
             "time": "2017-09-19T22:47:14+00:00"
+        },
+        {
+            "name": "sylius-labs/coding-standard",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SyliusLabs/CodingStandard.git",
+                "reference": "e50212b2be8f1e5984c69b9bdf205b32daa06688"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SyliusLabs/CodingStandard/zipball/e50212b2be8f1e5984c69b9bdf205b32daa06688",
+                "reference": "e50212b2be8f1e5984c69b9bdf205b32daa06688",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1",
+                "symplify/easy-coding-standard": "^2.4"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kamil Kokot",
+                    "email": "kamil@kokot.me",
+                    "homepage": "http://kamil.kokot.me"
+                }
+            ],
+            "description": "Battle-tested coding standard configuration used in Sylius.",
+            "time": "2017-09-27T14:33:43+00:00"
         },
         {
             "name": "symfony/config",

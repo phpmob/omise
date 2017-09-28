@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace PhpMob\Omise\Api;
 
 use PhpMob\Omise\Api;
@@ -41,7 +43,7 @@ final class Customer extends Api
     {
         self::assertNotEmpty($id);
 
-        return $this->doRequest('GET', '/customers/'.$id);
+        return $this->doRequest('GET', '/customers/' . $id);
     }
 
     /**
@@ -91,7 +93,7 @@ final class Customer extends Api
             unset($data['card']);
         }
 
-        $customer->updateStore($this->doRequest('PATCH', '/customers/'.$customer->id, $data)->toArray());
+        $customer->updateStore($this->doRequest('PATCH', '/customers/' . $customer->id, $data)->toArray());
     }
 
     /**
@@ -113,6 +115,6 @@ final class Customer extends Api
     {
         self::assertNotEmpty($customer->id);
 
-        $customer->updateStore($this->doRequest('DELETE', '/customers/'.$customer->id)->toArray());
+        $customer->updateStore($this->doRequest('DELETE', '/customers/' . $customer->id)->toArray());
     }
 }

@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace PhpMob\Omise;
 
 use Doctrine\Common\Inflector\Inflector;
@@ -72,9 +74,6 @@ abstract class Model
         return (string) $this->$idAttribute;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function __get($name)
     {
         $name = Inflector::tableize($property = $name);
@@ -86,9 +85,6 @@ abstract class Model
         return $this->store[$name];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function __set($name, $value)
     {
         $this->store[Inflector::tableize($name)] = $value;

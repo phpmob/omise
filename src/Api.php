@@ -9,12 +9,14 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace PhpMob\Omise;
 
 use PhpMob\Omise\Client\HttpClientInterface;
+use PhpMob\Omise\Domain\Error;
 use PhpMob\Omise\Exception\InvalidRequestArgumentException;
 use PhpMob\Omise\Exception\InvalidResponseException;
-use PhpMob\Omise\Domain\Error;
 use PhpMob\Omise\Hydrator\Hydration;
 use PhpMob\Omise\Hydrator\HydrationInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -81,7 +83,7 @@ abstract class Api
      */
     protected function getAuthorizationKey()
     {
-        return 'Basic '.base64_encode($this->options[$this->isSensitive ? 'public_key' : 'secret_key'].':');
+        return 'Basic ' . base64_encode($this->options[$this->isSensitive ? 'public_key' : 'secret_key'] . ':');
     }
 
     /**
@@ -99,6 +101,7 @@ abstract class Api
      * @param array $headers
      *
      * @return mixed|Model
+     *
      * @throws InvalidResponseException
      */
     protected function doRequest($method, $path, array $data = [], array $headers = [])
@@ -110,7 +113,7 @@ abstract class Api
             $headers = array_merge(['Content-Type' => 'application/json; charset=utf-8'], $headers);
         }
 
-        $uri = preg_replace('/([^:])(\/{2,})/', '$1/', $this->getApiServer().$path);
+        $uri = preg_replace('/([^:])(\/{2,})/', '$1/', $this->getApiServer() . $path);
         $response = $this->httpClient->send($method, $uri, $data, $headers);
 
         return $this->hydrateResponse($response);
@@ -120,6 +123,7 @@ abstract class Api
      * @param ResponseInterface $response
      *
      * @return mixed|Model
+     *
      * @throws InvalidResponseException
      */
     protected function hydrateResponse(ResponseInterface $response)
@@ -131,7 +135,7 @@ abstract class Api
             $content = json_encode(
                 [
                     'object' => 'error',
-                    'code' => 'http_error_'.$response->getStatusCode(),
+                    'code' => 'http_error_' . $response->getStatusCode(),
                     'message' => $response->getReasonPhrase(),
                 ]
             );
