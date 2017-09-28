@@ -18,8 +18,7 @@
         "psr-4": {
             "PhpMob\\Omise\\": "src"
         },
-        "classmap": [
-        ]
+        "classmap": []
     },
     "autoload-dev": {
         "psr-4": {
@@ -37,6 +36,7 @@
         "doctrine/inflector": "^1.1"
     },
     "require-dev": {
+        "symplify/easy-coding-standard": "^2.3",
         "php-http/guzzle6-adapter": "^1.1",
         "phpspec/phpspec": "^4.0",
         "phpunit/phpunit": "^5.6"
