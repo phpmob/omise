@@ -39,12 +39,4 @@ class FacadeHydration extends Hydration
     {
         return Facade::class;
     }
-
-    /**
-     * {@inheritdoc}
-     */
-    public static function getDomainAssertionClass()
-    {
-        return Facade::class;
-    }
 }
