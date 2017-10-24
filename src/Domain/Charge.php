@@ -102,4 +102,25 @@ class Charge extends Model
 
         return [];
     }
+
+    /**
+     * @param $id
+     *
+     * @return Refund|null
+     */
+    public function findRefunds($id)
+    {
+        $charge = array_filter(
+            $this->getRefunds(),
+            function (Refund $charge) use ($id) {
+                return $charge->id === $id;
+            }
+        );
+
+        if (empty($charge)) {
+            return null;
+        }
+
+        return $charge[0];
+    }
 }

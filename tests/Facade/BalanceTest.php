@@ -11,22 +11,22 @@
 
 namespace tests\PhpMob\Omise\Facade;
 
-use PhpMob\Omise\Facade\Account;
+use PhpMob\Omise\Facade\Balance;
 use tests\PhpMob\Omise\FacadeTestCase;
 
 /**
  * @author Ishmael Doss <nukboon@gmail.com>
  */
-class AccountTest extends FacadeTestCase
+class BalanceTest extends FacadeTestCase
 {
     /**
      * @test
      */
     function it_can_fetch_item()
     {
-        $this->client->fixture('account');
+        $this->client->fixture('balance');
 
-        $this->assertEquals('acct_4x7d2wtqnj2f4klrfsc', Account::fetch()->id);
+        $this->assertEquals('thb', Balance::fetch()->currency);
     }
 
     /**
@@ -36,12 +36,12 @@ class AccountTest extends FacadeTestCase
     {
         $this->client->fixture('account');
 
-        $account = new Account();
-        
-        $account->id = 'foo';
+        $balance = new Balance();
 
-        $account->refresh();
+        $balance->currency = 'jpy';
 
-        $this->assertEquals('acct_4x7d2wtqnj2f4klrfsc', $account->id);
+        $balance->refresh();
+
+        $this->assertEquals('thb', $balance->currency);
     }
 }

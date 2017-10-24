@@ -63,8 +63,6 @@ class ChargeTest extends FacadeTestCase
         $charge = Charge::find($this->chargeId);
         $charge->description = 'foo';
 
-        $this->assertEquals('foo', $charge->description);
-
         $charge->refresh();
 
         $this->assertEquals(null, $charge->description);
@@ -78,12 +76,112 @@ class ChargeTest extends FacadeTestCase
         $this->client->fixture('charge');
 
         $charge = new Charge();
+
         $charge->description = 'foo';
         $charge->amount = 10000;
         $charge->currency = Currency::THB;
         $charge->card = $this->tokenId;
 
         $charge->create();
+
+        $this->assertNotEmpty($charge->id);
+    }
+
+    /**
+     * @test
+     */
+    function it_can_create_using_token()
+    {
+        $this->client->fixture('charge');
+
+        $charge = new Charge();
+
+        $charge->amount = 100000;
+        $charge->currency = Currency::THB;
+        $charge->card = 'tokn_test_4xs9408a642a1htto8z';
+
+        $charge->create();
+
+        $this->assertNotEmpty($charge->id);
+    }
+
+    /**
+     * @test
+     */
+    function it_can_create_using_customer()
+    {
+        $this->client->fixture('charge');
+
+        $charge = new Charge();
+
+        $charge->amount = 100000;
+        $charge->currency = Currency::THB;
+        $charge->customer = null;
+
+        $charge->create();
+
+        $this->assertNotEmpty($charge->id);
+    }
+
+    /**
+     * @test
+     */
+    function it_can_create_using__customer_card()
+    {
+        $this->client->fixture('charge');
+
+        $charge = new Charge();
+
+        $charge->amount = 100000;
+        $charge->currency = Currency::THB;
+        $charge->customer = null;
+        $charge->card = 'card_test_4xtsoy2nbfs7ujngyyq';
+
+        $charge->create();
+
+        $this->assertNotEmpty($charge->id);
+    }
+
+    /**
+     * @test
+     */
+    function it_can_update_item()
+    {
+        $this->client->fixture('charge');
+
+
+        $charge = Charge::find($this->chargeId);
+        $charge->description = 'Another description';
+
+        $charge->update();
+
+        $this->assertNotEmpty($charge->id);
+    }
+
+    /**
+     * @test
+     */
+    function it_can_capture_item()
+    {
+        $this->client->fixture('charge');
+
+        $charge = Charge::find($this->chargeId);
+
+        $charge->capture();
+
+        $this->assertNotEmpty($charge->id);
+    }
+
+    /**
+     * @test
+     */
+    function it_can_reverse_item()
+    {
+        $this->client->fixture('charge');
+
+        $charge = Charge::find($this->chargeId);
+
+        $charge->reverse();
 
         $this->assertNotEmpty($charge->id);
     }

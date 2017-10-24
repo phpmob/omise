@@ -20,6 +20,11 @@ use PhpMob\Omise\Facade;
  * @author Ishmael Doss <nukboon@gmail.com>
  *
  * @mixin Domain
+ * @method static Pagination all(array $parameters = [])
+ * @method static Pagination charge($chargeId, array $parameters = [])
+ * @method static Refund find($chargeId, $id)
+ * @method void refresh()
+ * @method void create()
  */
 class Refund extends Facade
 {

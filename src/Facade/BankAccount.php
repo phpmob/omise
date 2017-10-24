@@ -9,20 +9,16 @@
  * file that was distributed with this source code.
  */
 
-declare(strict_types=1);
-
 namespace PhpMob\Omise\Facade;
 
-use PhpMob\Omise\Domain\Account as Domain;
 use PhpMob\Omise\Facade;
+use PhpMob\Omise\Domain\BankAccount as Domain;
 
 /**
  * @author Ishmael Doss <nukboon@gmail.com>
  *
  * @mixin Domain
- * @method static Account fetch
- * @method void refresh()
  */
-class Account extends Facade
+class BankAccount extends Facade
 {
 }

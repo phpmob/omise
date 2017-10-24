@@ -9,20 +9,23 @@
  * file that was distributed with this source code.
  */
 
-declare(strict_types=1);
-
 namespace PhpMob\Omise\Facade;
 
-use PhpMob\Omise\Domain\Account as Domain;
 use PhpMob\Omise\Facade;
+use PhpMob\Omise\Domain\Transfer as Domain;
 
 /**
- * @author Ishmael Doss <nukboon@gmail.com>
+ * @author Prawit <tongmomo001@gmail.com>
  *
  * @mixin Domain
- * @method static Account fetch
+ * @method static Pagination all(array $parameters = [])
+ * @method static Transfer find($id)
  * @method void refresh()
+ * @method void create()
+ * @method void createWithRecipient()
+ * @method void update()
+ * @method void destroy()
  */
-class Account extends Facade
+class Transfer extends Facade
 {
 }

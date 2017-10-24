@@ -9,27 +9,23 @@
  * file that was distributed with this source code.
  */
 
-declare(strict_types=1);
-
 namespace PhpMob\Omise\Domain;
 
 use PhpMob\Omise\Model;
 
 /**
- * @author Ishmael Doss <nukboon@gmail.com>
+ * @author Saranyu <Saranyuphimsahwan@gmail.com>
  *
  *
  * @property string object
  * @property string id
- * @property string message
- * @property string code
  * @property string location
+ * @property string type
  * @property integer amount
  * @property string currency
- * @property boolean voided
- * @property Charge charge
- * @property string transactionId
+ * @property string transferable
+ * @property string created
  */
-class Refund extends Model
+class Transaction extends Model
 {
 }

@@ -29,6 +29,7 @@ class TokenTest extends FacadeTestCase
         $this->client->fixture('token');
 
         $token = new Token();
+
         $token->card = new Card();
         $token->card->name = 'Somchai Prasert';
         $token->card->number = '4242424242424242';

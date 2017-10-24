@@ -9,26 +9,23 @@
  * file that was distributed with this source code.
  */
 
-declare(strict_types=1);
-
 namespace PhpMob\Omise\Facade;
 
-use PhpMob\Omise\Domain\Customer as Domain;
 use PhpMob\Omise\Facade;
+use PhpMob\Omise\Domain\Dispute as Domain;
 
 /**
- * @author Ishmael Doss <nukboon@gmail.com>
+ * @author Saranyu <Saranyuphimsahwan@gmail.com>
  *
  * @mixin Domain
  * @method static Pagination all(array $parameters = [])
- * @method static Customer find($id)
+ * @method static Pagination opens(array $parameters = [])
+ * @method static Pagination pendings(array $parameters = [])
+ * @method static Pagination closeds(array $parameters = [])
+ * @method static Dispute find($id)
  * @method void refresh()
- * @method void create()
- * @method void createWithCard()
  * @method void update()
- * @method void updateWithCard()
- * @method void destroy()
  */
-class Customer extends Facade
+class Dispute extends Facade
 {
 }
