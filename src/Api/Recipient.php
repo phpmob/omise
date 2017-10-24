@@ -9,11 +9,13 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace PhpMob\Omise\Api;
 
 use PhpMob\Omise\Api;
-use PhpMob\Omise\Domain\Recipient as Domain;
 use PhpMob\Omise\Domain\Pagination;
+use PhpMob\Omise\Domain\Recipient as Domain;
 
 /**
  * @author Prawit <tongmomo001@gmail.com>
@@ -47,7 +49,7 @@ final class Recipient extends Api
     {
         self::assertNotEmpty($recipient->id);
 
-        $recipient->updateStore($this->doRequest('PATCH', '/recipients/'.$recipient->id, $recipient->getUpdateData())->toArray());
+        $recipient->updateStore($this->doRequest('PATCH', '/recipients/' . $recipient->id, $recipient->getUpdateData())->toArray());
     }
 
     /**
@@ -59,7 +61,7 @@ final class Recipient extends Api
     {
         self::assertNotEmpty($id);
 
-        return $this->doRequest('GET', '/recipients/'.$id);
+        return $this->doRequest('GET', '/recipients/' . $id);
     }
 
     /**
@@ -77,6 +79,6 @@ final class Recipient extends Api
     {
         self::assertNotEmpty($recipient->id);
 
-        $recipient->updateStore($this->doRequest('DELETE', '/recipients/'.$recipient->id)->toArray());
+        $recipient->updateStore($this->doRequest('DELETE', '/recipients/' . $recipient->id)->toArray());
     }
 }

@@ -20,6 +20,7 @@ use PhpMob\Omise\Facade;
  * @author Ishmael Doss <nukboon@gmail.com>
  *
  * @mixin Domain
+ *
  * @method static Account fetch
  * @method void refresh()
  */

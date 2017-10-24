@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace PhpMob\Omise\Domain;
 
 use PhpMob\Omise\Model;
@@ -16,12 +18,11 @@ use PhpMob\Omise\Model;
 /**
  * @author Saranyu <Saranyuphimsahwan@gmail.com>
  *
- *
  * @property string object
  * @property string id
  * @property string location
  * @property string type
- * @property integer amount
+ * @property int amount
  * @property string currency
  * @property string transferable
  * @property string created

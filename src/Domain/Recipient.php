@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace PhpMob\Omise\Domain;
 
 use PhpMob\Omise\Model;
@@ -16,13 +18,12 @@ use PhpMob\Omise\Model;
 /**
  * @author Prawit <tongmomo001@gmail.com>
  *
- *
  * @property string object
  * @property string id
  * @property string livemode
  * @property string location
- * @property boolean verified
- * @property boolean active
+ * @property bool verified
+ * @property bool active
  * @property string name
  * @property string email
  * @property string description

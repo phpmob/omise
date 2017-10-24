@@ -9,15 +9,18 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace PhpMob\Omise\Facade;
 
-use PhpMob\Omise\Facade;
 use PhpMob\Omise\Domain\Transaction as Domain;
+use PhpMob\Omise\Facade;
 
 /**
  * @author Saranyu <Saranyuphimsahwan@gmail.com>
  *
  * @mixin Domain
+ *
  * @method static Pagination all(array $parameters = [])
  * @method static Transaction find($id)
  * @method void refresh()

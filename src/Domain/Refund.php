@@ -18,15 +18,14 @@ use PhpMob\Omise\Model;
 /**
  * @author Ishmael Doss <nukboon@gmail.com>
  *
- *
  * @property string object
  * @property string id
  * @property string message
  * @property string code
  * @property string location
- * @property integer amount
+ * @property int amount
  * @property string currency
- * @property boolean voided
+ * @property bool voided
  * @property Charge charge
  * @property string transactionId
  */

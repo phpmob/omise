@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace PhpMob\Omise\Domain;
 
 use PhpMob\Omise\Model;
@@ -16,18 +18,17 @@ use PhpMob\Omise\Model;
 /**
  * @author Prawit <tongmomo001@gmail.com>
  *
- *
  * @property string object
  * @property string id
  * @property string livemode
  * @property string location
  * @property string recipient
  * @property BankAccount bankAccount
- * @property boolean sent
- * @property boolean paid
- * @property integer amount
+ * @property bool sent
+ * @property bool paid
+ * @property int amount
  * @property string currency
- * @property integer fee
+ * @property int fee
  * @property string failureCode
  * @property string failureMessage
  * @property string transaction

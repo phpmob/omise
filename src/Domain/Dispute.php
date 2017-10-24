@@ -19,9 +19,9 @@ use PhpMob\Omise\Model;
  * @author Saranyu <Saranyuphimsahwan@gmail.com>
  *
  * @property string id
- * @property boolean livemode
+ * @property bool livemode
  * @property string location
- * @property integer amount
+ * @property int amount
  * @property string currency
  * @property string status
  * @property string message

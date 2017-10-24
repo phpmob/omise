@@ -13,29 +13,7 @@ declare(strict_types=1);
 
 namespace PhpMob\Omise;
 
-use PhpMob\Omise\Api\Account as AccountApi;
-use PhpMob\Omise\Api\Balance as BalanceApi;
-use PhpMob\Omise\Api\Charge as ChargeApi;
-use PhpMob\Omise\Api\Customer as CustomerApi;
-use PhpMob\Omise\Api\Dispute as DisputeApi;
-use PhpMob\Omise\Api\Receipt as ReceiptApi;
-use PhpMob\Omise\Api\Recipient as RecipientApi;
-use PhpMob\Omise\Api\Refund as RefundApi;
-use PhpMob\Omise\Api\Token as TokenApi;
-use PhpMob\Omise\Api\Transaction as TransactionApi;
-use PhpMob\Omise\Api\Transfer as TransferApi;
 use PhpMob\Omise\Client\HttpClientInterface;
-use PhpMob\Omise\Facade\Account;
-use PhpMob\Omise\Facade\Balance;
-use PhpMob\Omise\Facade\Charge;
-use PhpMob\Omise\Facade\Customer;
-use PhpMob\Omise\Facade\Dispute;
-use PhpMob\Omise\Facade\Receipt;
-use PhpMob\Omise\Facade\Recipient;
-use PhpMob\Omise\Facade\Refund;
-use PhpMob\Omise\Facade\Token;
-use PhpMob\Omise\Facade\Transaction;
-use PhpMob\Omise\Facade\Transfer;
 use PhpMob\Omise\Hydrator\FacadeHydration;
 use PhpMob\Omise\Hydrator\HydrationInterface;
 
@@ -65,20 +43,20 @@ class OmiseApi
     private $hydration;
 
     /**
-     * @var array
+     * @var Api[]
      */
     private static $supports = [
-        Account::class => AccountApi::class,
-        Balance::class => BalanceApi::class,
-        Charge::class => ChargeApi::class,
-        Customer::class => CustomerApi::class,
-        Dispute::class => DisputeApi::class,
-        Receipt::class => ReceiptApi::class,
-        Recipient::class => RecipientApi::class,
-        Refund::class => RefundApi::class,
-        Token::class => TokenApi::class,
-        Transaction::class => TransactionApi::class,
-        Transfer::class => TransferApi::class,
+        Facade\Account::class => Api\Account::class,
+        Facade\Balance::class => Api\Balance::class,
+        Facade\Charge::class => Api\Charge::class,
+        Facade\Customer::class => Api\Customer::class,
+        Facade\Dispute::class => Api\Dispute::class,
+        Facade\Receipt::class => Api\Receipt::class,
+        Facade\Recipient::class => Api\Recipient::class,
+        Facade\Refund::class => Api\Refund::class,
+        Facade\Token::class => Api\Token::class,
+        Facade\Transaction::class => Api\Transaction::class,
+        Facade\Transfer::class => Api\Transfer::class,
     ];
 
     /**
@@ -118,7 +96,7 @@ class OmiseApi
         $self = new self($httpClient, $options, new FacadeHydration());
 
         /**
-         * @var Facade
+         * @var Facade $domainClass
          * @var Api $apiClass
          */
         foreach (self::$supports as $domainClass => $apiClass) {

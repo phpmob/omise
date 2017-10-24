@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace PhpMob\Omise\Api;
 
 use PhpMob\Omise\Api;
@@ -71,7 +73,7 @@ final class Dispute extends Api
     {
         self::assertNotEmpty($id);
 
-        return $this->doRequest('GET', '/disputes/'.$id);
+        return $this->doRequest('GET', '/disputes/' . $id);
     }
 
     /**
@@ -89,6 +91,6 @@ final class Dispute extends Api
     {
         self::assertNotEmpty($dispute->id);
 
-        $dispute->updateStore($this->doRequest('PATCH', '/disputes/'.$dispute->id, $dispute->getUpdateData())->toArray());
+        $dispute->updateStore($this->doRequest('PATCH', '/disputes/' . $dispute->id, $dispute->getUpdateData())->toArray());
     }
 }

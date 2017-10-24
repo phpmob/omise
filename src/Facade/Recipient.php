@@ -9,15 +9,18 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace PhpMob\Omise\Facade;
 
-use PhpMob\Omise\Facade;
 use PhpMob\Omise\Domain\Recipient as Domain;
+use PhpMob\Omise\Facade;
 
 /**
  * @author Prawit <tongmomo001@gmail.com>
  *
  * @mixin Domain
+ *
  * @method static Pagination all(array $parameters = [])
  * @method static Recipient find($id)
  * @method void refresh()

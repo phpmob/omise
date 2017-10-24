@@ -9,11 +9,13 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace PhpMob\Omise\Api;
 
 use PhpMob\Omise\Api;
-use PhpMob\Omise\Domain\Transfer as Domain;
 use PhpMob\Omise\Domain\Pagination;
+use PhpMob\Omise\Domain\Transfer as Domain;
 
 /**
  * @author Prawit <tongmomo001@gmail.com>
@@ -61,7 +63,7 @@ final class Transfer extends Api
     {
         self::assertNotEmpty($transfers->id);
 
-        $transfers->updateStore($this->doRequest('PATCH', '/transfers/'.$transfers->id, $transfers->getUpdateData())->toArray());
+        $transfers->updateStore($this->doRequest('PATCH', '/transfers/' . $transfers->id, $transfers->getUpdateData())->toArray());
     }
 
     /**
@@ -73,7 +75,7 @@ final class Transfer extends Api
     {
         self::assertNotEmpty($id);
 
-        return $this->doRequest('GET', '/transfers/'.$id);
+        return $this->doRequest('GET', '/transfers/' . $id);
     }
 
     /**
@@ -91,6 +93,6 @@ final class Transfer extends Api
     {
         self::assertNotEmpty($transfers->id);
 
-        $transfers->updateStore($this->doRequest('DELETE', '/transfers/'.$transfers->id)->toArray());
+        $transfers->updateStore($this->doRequest('DELETE', '/transfers/' . $transfers->id)->toArray());
     }
 }

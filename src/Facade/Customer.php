@@ -20,6 +20,7 @@ use PhpMob\Omise\Facade;
  * @author Ishmael Doss <nukboon@gmail.com>
  *
  * @mixin Domain
+ *
  * @method static Pagination all(array $parameters = [])
  * @method static Customer find($id)
  * @method void refresh()

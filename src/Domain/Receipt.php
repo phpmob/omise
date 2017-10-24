@@ -9,13 +9,14 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace PhpMob\Omise\Domain;
 
 use PhpMob\Omise\Model;
 
 /**
  * @author Prawit <tongmomo001@gmail.com>
- *
  *
  * @property string object
  * @property string id
@@ -30,14 +31,14 @@ use PhpMob\Omise\Model;
  * @property string companyName
  * @property string companyAddress
  * @property string companyTaxId
- * @property integer chargeFee
- * @property integer voidedFee
- * @property integer transferFee
- * @property integer subtotal
- * @property integer vat
- * @property integer wht
- * @property integer total
- * @property boolean creditNote
+ * @property int chargeFee
+ * @property int voidedFee
+ * @property int transferFee
+ * @property int subtotal
+ * @property int vat
+ * @property int wht
+ * @property int total
+ * @property bool creditNote
  * @property string currency
  */
 class Receipt extends Model

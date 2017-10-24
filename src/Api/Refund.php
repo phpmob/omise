@@ -9,12 +9,14 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace PhpMob\Omise\Api;
 
 use PhpMob\Omise\Api;
-use PhpMob\Omise\Domain\Refund as Domain;
 use PhpMob\Omise\Domain\Charge;
 use PhpMob\Omise\Domain\Pagination;
+use PhpMob\Omise\Domain\Refund as Domain;
 
 /**
  * @author Ishmael Doss <nukboon@gmail.com>

@@ -9,11 +9,13 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace PhpMob\Omise\Api;
 
 use PhpMob\Omise\Api;
-use PhpMob\Omise\Domain\Receipt as Domain;
 use PhpMob\Omise\Domain\Pagination;
+use PhpMob\Omise\Domain\Receipt as Domain;
 
 /**
  * @author Prawit <tongmomo001@gmail.com>
@@ -41,13 +43,13 @@ final class Receipt extends Api
     {
         self::assertNotEmpty($id);
 
-        return $this->doRequest('GET', '/receipts/'.$id);
+        return $this->doRequest('GET', '/receipts/' . $id);
     }
 
     /**
      * @param Domain $receipt
      */
-    public function refresh(Domain $receipt )
+    public function refresh(Domain $receipt)
     {
         $receipt->updateStore($this->find($receipt->id)->toArray());
     }

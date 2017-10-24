@@ -9,11 +9,13 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace PhpMob\Omise\Api;
 
 use PhpMob\Omise\Api;
-use PhpMob\Omise\Domain\Transaction as Domain;
 use PhpMob\Omise\Domain\Pagination;
+use PhpMob\Omise\Domain\Transaction as Domain;
 
 /**
  * @author Saranyu <saranyuphimsahwan@gmail.com>
@@ -41,7 +43,7 @@ final class Transaction extends Api
     {
         self::assertNotEmpty($id);
 
-        return $this->doRequest('GET', '/transactions/'.$id);
+        return $this->doRequest('GET', '/transactions/' . $id);
     }
 
     /**
