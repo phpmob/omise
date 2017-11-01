@@ -115,7 +115,7 @@ final class ChargeSpec extends ObjectBehavior
         StreamInterface $stream,
         Charge $charge
     ) {
-        $httpClient->send('POST', self::ENDPOINT, ["livemode" => true], Fixture::secretJsonHeaders())->willReturn(
+        $httpClient->send('POST', self::ENDPOINT, ["livemode" => false], Fixture::secretJsonHeaders())->willReturn(
             $response
         );
         $response->getBody()->willReturn($stream);
@@ -137,7 +137,7 @@ final class ChargeSpec extends ObjectBehavior
 
         $charge->getCreateData()->shouldBeCalled()->willReturn([]);
 
-        $httpClient->send('POST', self::ENDPOINT, ["livemode" => true], Fixture::secretJsonHeaders())
+        $httpClient->send('POST', self::ENDPOINT, ["livemode" => false], Fixture::secretJsonHeaders())
             ->willReturn($response);
 
         $response->getBody()->willReturn($stream);
@@ -152,15 +152,15 @@ final class ChargeSpec extends ObjectBehavior
         StreamInterface $stream,
         Charge $charge
     ) {
-        $charge->card = new Card(['id' => 'foo']);
+        $charge->cardToken = 'foo';
 
-        $httpClient->send('POST', self::ENDPOINT, ["livemode" => true], Fixture::secretJsonHeaders())->willReturn(
+        $httpClient->send('POST', self::ENDPOINT, ["livemode" => false], Fixture::secretJsonHeaders())->willReturn(
             $response
         );
         $response->getBody()->willReturn($stream);
         $stream->getContents()->willReturn($data = Fixture::get('charge'));
 
-        $charge->getCreateData()->shouldBeCalled()->willReturn([]);
+        $charge->getCreateUsingTokenData()->shouldBeCalled()->willReturn([]);
         $charge->updateStore(Argument::any())->shouldBeCalled();
 
         $this->createUsingToken($charge);
