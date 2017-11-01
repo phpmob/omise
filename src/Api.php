@@ -109,7 +109,7 @@ abstract class Api
         $headers = array_merge(['Authorization' => $this->getAuthorizationKey()], $headers);
 
         if ('GET' !== strtoupper($method)) {
-            $data = array_merge($data, ['livemode' => $this->options['sandbox']]);
+            $data = array_merge($data, ['livemode' => !$this->options['sandbox']]);
             $headers = array_merge(['Content-Type' => 'application/json; charset=utf-8'], $headers);
         }
 

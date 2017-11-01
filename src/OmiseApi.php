@@ -107,4 +107,16 @@ class OmiseApi
             $domainClass::setApi($self->create($apiClass));
         }
     }
+
+    /**
+     * @param string $name
+     *
+     * @return Api
+     */
+    public function __get($name)
+    {
+        $api = __NAMESPACE__ . "\\Api\\" . ucfirst($name);
+
+        return $this->create($api);
+    }
 }

@@ -15,6 +15,7 @@ namespace PhpMob\Omise\Client;
 
 use GuzzleHttp\Psr7\Request;
 use Http\Adapter\Guzzle6\Client as GuzzleAdapter;
+use Http\Client\HttpAsyncClient;
 use Http\Client\HttpClient;
 use PhpMob\Omise\OmiseApi;
 use Psr\Http\Message\ResponseInterface;
@@ -30,11 +31,12 @@ final class GuzzleHttpClient implements HttpClientInterface
     private $httpClient;
 
     /**
+     * @param HttpClient|HttpAsyncClient $client
      * @param array $config
      */
-    public function __construct(array $config = [])
+    public function __construct($client = null, array $config = [])
     {
-        $this->httpClient = GuzzleAdapter::createWithConfig(
+        $this->httpClient = $client ?: GuzzleAdapter::createWithConfig(
             array_replace_recursive(
                 [
                     'verify' => true,

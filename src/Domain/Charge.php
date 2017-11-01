@@ -51,9 +51,16 @@ use PhpMob\Omise\Model;
 class Charge extends Model
 {
     /**
-     * @var string
+     * {@inheritdoc}
      */
-    protected $cardToken;
+    public function __set($name, $value)
+    {
+        if ('currency' === $name) {
+            $value = strtolower($value);
+        }
+
+        parent::__set($name, $value);
+    }
 
     /**
      * @param string $countryCode
@@ -70,14 +77,29 @@ class Charge extends Model
 
         return [
             'customer' => (string) ($this->customer),
-            'card' => $this->__get('cardToken'),
-            'amount' => $this->amount,
+            'card' => $this->card,
+            'amount' => $this->amount * Currency::getDivisionOffset($this->currency),
             'currency' => $this->currency,
             'description' => $this->description,
             'metadata' => $this->metadata,
             'capture' => $this->capture,
             'return_uri' => $this->returnUri,
         ];
+    }
+
+    /**
+     * @param string $countryCode
+     *
+     * @return array
+     */
+    public function getCreateUsingTokenData($countryCode = Country::TH)
+    {
+        $data = $this->getCreateData($countryCode);
+        $data['card'] = $this->cardToken;
+
+        unset($data['customer']);
+
+        return $data;
     }
 
     /**

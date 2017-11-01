@@ -67,9 +67,9 @@ final class Charge extends Api
      */
     public function createUsingToken(Domain $charge)
     {
-        self::assertNotEmpty(@$charge->card->id, 'Card token can not be empty.');
+        self::assertNotEmpty($charge->cardToken, 'Card token can not be empty.');
 
-        $this->create($charge);
+        $charge->updateStore($this->doRequest('POST', '/charges', $charge->getCreateUsingTokenData())->toArray());
     }
 
     /**
