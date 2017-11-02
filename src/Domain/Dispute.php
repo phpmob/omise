@@ -31,6 +31,10 @@ use PhpMob\Omise\Model;
  */
 class Dispute extends Model
 {
+    const EVENT_CREATE = 'charge.create';
+    const EVENT_UPDATE = 'charge.update';
+    const EVENT_CLOSE = 'charge.close';
+
     /**
      * @return array
      */

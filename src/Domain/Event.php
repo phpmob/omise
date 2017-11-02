@@ -20,16 +20,12 @@ use PhpMob\Omise\Model;
  *
  * @property string object
  * @property string id
- * @property string message
- * @property string code
+ * @property string key
  * @property string location
- * @property int amount
- * @property string currency
- * @property bool voided
- * @property Charge charge
- * @property string transactionId
+ * @property boolean livemode
+ * @property array data
+ * @property \DateTime created
  */
-class Refund extends Model
+class Event extends Model
 {
-    const EVENT_CREATE = 'charge.create';
 }

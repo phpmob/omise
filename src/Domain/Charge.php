@@ -56,6 +56,12 @@ class Charge extends Model
     const STATUS_REVERSED = 'reversed';
     const STATUS_SUCCESSFUL = 'successful';
 
+    const EVENT_CREATE = 'charge.create';
+    const EVENT_UPDATE = 'charge.update';
+    const EVENT_CAPTURE = 'charge.capture';
+    const EVENT_REVERSE = 'charge.reverse';
+    const EVENT_COMPLETE = 'charge.complete';
+
     /**
      * {@inheritdoc}
      */

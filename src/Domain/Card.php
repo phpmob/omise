@@ -43,6 +43,9 @@ use PhpMob\Omise\Model;
  */
 class Card extends Model
 {
+    const EVENT_UPDATE = 'charge.update';
+    const EVENT_DESTROY = 'charge.destroy';
+
     /**
      * @var Customer
      */

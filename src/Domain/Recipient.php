@@ -36,6 +36,13 @@ use PhpMob\Omise\Model;
  */
 class Recipient extends Model
 {
+    const EVENT_CREATE = 'charge.create';
+    const EVENT_UPDATE = 'charge.update';
+    const EVENT_DESTROY = 'charge.destroy';
+    const EVENT_ACTIVATE = 'charge.activate';
+    const EVENT_DEACTIVATE = 'charge.deactivate';
+    const EVENT_VERIFY = 'charge.verify';
+
     /**
      * @return array
      */

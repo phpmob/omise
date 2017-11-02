@@ -33,6 +33,11 @@ use PhpMob\Omise\Model;
  */
 class Customer extends Model
 {
+    const EVENT_CREATE = 'charge.create';
+    const EVENT_UPDATE = 'charge.update';
+    const EVENT_UPDATE_CARD = 'charge.update.card';
+    const EVENT_DESTROY = 'charge.destroy';
+
     /**
      * @var string
      */

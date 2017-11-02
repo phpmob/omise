@@ -37,6 +37,12 @@ use PhpMob\Omise\Model;
  */
 class Transfer extends Model
 {
+    const EVENT_CREATE = 'charge.create';
+    const EVENT_UPDATE = 'charge.update';
+    const EVENT_DESTROY = 'charge.destroy';
+    const EVENT_SEND = 'charge.send';
+    const EVENT_PAY = 'charge.pay';
+
     /**
      * @return array
      */
