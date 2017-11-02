@@ -19,6 +19,8 @@ use PhpMob\Omise\Hydrator\HydrationInterface;
 
 /**
  * @author Ishmael Doss <nukboon@gmail.com>
+ *
+ * @property Api\Charge charge
  */
 class OmiseApi
 {
@@ -115,8 +117,6 @@ class OmiseApi
      */
     public function __get($name)
     {
-        $api = __NAMESPACE__ . "\\Api\\" . ucfirst($name);
-
-        return $this->create($api);
+        return $this->create(__NAMESPACE__ . "\\Api\\" . ucfirst($name));
     }
 }

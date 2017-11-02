@@ -50,6 +50,12 @@ use PhpMob\Omise\Model;
  */
 class Charge extends Model
 {
+    const STATUS_FAILED = 'failed';
+    const STATUS_EXPIRED = 'expired';
+    const STATUS_PENDING = 'pending';
+    const STATUS_REVERSED = 'reversed';
+    const STATUS_SUCCESSFUL = 'successful';
+
     /**
      * {@inheritdoc}
      */
@@ -76,7 +82,7 @@ class Charge extends Model
         }
 
         return [
-            'customer' => (string) ($this->customer),
+            'customer' => (string)($this->customer),
             'card' => $this->card,
             'amount' => $this->amount * Currency::getDivisionOffset($this->currency),
             'currency' => $this->currency,
