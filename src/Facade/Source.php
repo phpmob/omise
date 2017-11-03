@@ -11,20 +11,18 @@
 
 declare(strict_types=1);
 
-namespace PhpMob\Omise\Domain;
+namespace PhpMob\Omise\Facade;
 
-use PhpMob\Omise\Model;
+use PhpMob\Omise\Domain\Source as Domain;
+use PhpMob\Omise\Facade;
 
 /**
  * @author Ishmael Doss <nukboon@gmail.com>
  *
- * @property string object
- * @property bool livemode
- * @property string location
- * @property int available
- * @property int total
- * @property string currency
+ * @mixin Domain
+ *
+ * @method static Source create
  */
-class Balance extends Model
+class Source extends Facade
 {
 }

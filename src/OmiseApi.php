@@ -21,13 +21,14 @@ use PhpMob\Omise\Hydrator\HydrationInterface;
  * @author Ishmael Doss <nukboon@gmail.com>
  *
  * @property Api\Charge charge
+ * @property Api\Source source
  */
 class OmiseApi
 {
     const VERSION = '1.0.0-beta1';
     const OMISE_ENDPOINT = 'https://api.omise.co/';
     const OMISE_VAULT_ENDPOINT = 'https://vault.omise.co/';
-    const OMISE_VERSION = '2015-11-17';
+    const OMISE_VERSION = '2017-11-02';
 
     /**
      * @var HttpClientInterface

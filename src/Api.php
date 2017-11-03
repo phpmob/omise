@@ -33,6 +33,11 @@ abstract class Api
     protected $isSensitive = false;
 
     /**
+     * @var string
+     */
+    protected $countryCode = 'th';
+
+    /**
      * @var HttpClientInterface
      */
     protected $httpClient;
@@ -62,6 +67,7 @@ abstract class Api
         $this->options = $resolver->resolve($options);
         $this->hydration = $hydration ?: new Hydration();
         $this->isSensitive = $this->options['sensitive'];
+        $this->countryCode = $this->options['country_code'];
     }
 
     /**
@@ -76,6 +82,7 @@ abstract class Api
         $resolver->setAllowedTypes('sandbox', 'boolean');
 
         $resolver->setDefault('sensitive', $this->isSensitive);
+        $resolver->setDefault('country_code', $this->countryCode);
     }
 
     /**

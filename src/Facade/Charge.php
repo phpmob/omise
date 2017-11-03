@@ -28,6 +28,7 @@ use PhpMob\Omise\Facade;
  * @method void capture()
  * @method void reverse()
  * @method void create()
+ * @method void createUsingSource()
  * @method void createUsingToken()
  * @method void createUsingCustomer()
  * @method void createUsingCustomerAndCard()

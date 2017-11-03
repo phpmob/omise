@@ -47,6 +47,7 @@ use PhpMob\Omise\Model;
  * @property string returnUri
  * @property string authorizeUri
  * @property string $cardToken
+ * @property Source $source
  */
 class Charge extends Model
 {
@@ -110,6 +111,21 @@ class Charge extends Model
         $data['card'] = $this->cardToken;
 
         unset($data['customer']);
+
+        return $data;
+    }
+
+    /**
+     * @param string $countryCode
+     *
+     * @return array
+     */
+    public function getCreateUsingSourceData($countryCode = Country::TH)
+    {
+        $data = $this->getCreateData($countryCode);
+        $data['source'] = $this->source->id;
+
+        unset($data['card'], $data['customer']);
 
         return $data;
     }
