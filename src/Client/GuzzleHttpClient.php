@@ -31,10 +31,10 @@ final class GuzzleHttpClient implements HttpClientInterface
     private $httpClient;
 
     /**
-     * @param HttpClient|HttpAsyncClient $client
+     * @param HttpClient $client
      * @param array $config
      */
-    public function __construct($client = null, array $config = [])
+    public function __construct(?HttpClient $client = null, array $config = [])
     {
         $this->httpClient = $client ?: GuzzleAdapter::createWithConfig(
             array_replace_recursive(

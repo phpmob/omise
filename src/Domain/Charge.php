@@ -91,7 +91,7 @@ class Charge extends Model
         return [
             'customer' => (string)($this->customer),
             'card' => $this->card,
-            'amount' => $this->amount * Currency::getDivisionOffset($this->currency),
+            'amount' => intval($this->amount * Currency::getDivisionOffset($this->currency)),
             'currency' => $this->currency,
             'description' => $this->description,
             'metadata' => $this->metadata,
