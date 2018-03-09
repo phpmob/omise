@@ -121,7 +121,7 @@ final class ChargeSpec extends ObjectBehavior
         $response->getBody()->willReturn($stream);
         $stream->getContents()->willReturn(Fixture::get('charge'));
 
-        $charge->getCreateData()->shouldBeCalled()->willReturn([]);
+        $charge->getCreateData('th')->shouldBeCalled()->willReturn([]);
         $charge->updateStore(Argument::any())->shouldBeCalled();
 
         $this->create($charge);
@@ -135,7 +135,7 @@ final class ChargeSpec extends ObjectBehavior
     ) {
         $errorData = Fixture::get('error-invalid-charge');
 
-        $charge->getCreateData()->shouldBeCalled()->willReturn([]);
+        $charge->getCreateData('bar')->shouldBeCalled()->willReturn([]);
 
         $httpClient->send('POST', self::ENDPOINT, ["livemode" => false], Fixture::secretJsonHeaders())
             ->willReturn($response);
@@ -160,7 +160,7 @@ final class ChargeSpec extends ObjectBehavior
         $response->getBody()->willReturn($stream);
         $stream->getContents()->willReturn($data = Fixture::get('charge'));
 
-        $charge->getCreateUsingTokenData()->shouldBeCalled()->willReturn([]);
+        $charge->getCreateUsingTokenData('th')->shouldBeCalled()->willReturn([]);
         $charge->updateStore(Argument::any())->shouldBeCalled();
 
         $this->createUsingToken($charge);
