@@ -62,7 +62,7 @@ final class Currency
         return [
             self::JPY => [100, 2000000],
             self::SGD => [100, 2000000],
-            self::THB => [100, 100000000],
+            self::THB => [2000, 100000000],
         ][strtolower($code)];
     }
 
